@@ -9,7 +9,7 @@ public class SignalMessage {
 
     private String sender;
 
-    public SignalMessage(int sdpMLineIndex, String sdpMid, String candidate, String sdp, String type, String recipient, String sender) {
+    public SignalMessage(int sdpMLineIndex, String sdpMid, String candidate, String sdp, String type, String recipient, String sender, String mode) {
         this.sdpMLineIndex = sdpMLineIndex;
         this.sdpMid = sdpMid;
         this.candidate = candidate;
@@ -17,6 +17,7 @@ public class SignalMessage {
         this.type = type;
         this.recipient = recipient;
         this.sender = sender;
+        this.mode = mode;
     }
 
     private String recipient;
@@ -77,6 +78,15 @@ public class SignalMessage {
         this.sdpMLineIndex = sdpMLineIndex;
     }
 
+    public String getMode() {
+        return mode;
+    }
+
+    public void setMode(String mode) {
+        this.mode = mode;
+    }
+
+    private String mode;
     private String type; // "offer", "answer", "candidate"
     private String sdp; // for offer/answer
     private String candidate; // for ICE
